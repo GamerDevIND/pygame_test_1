@@ -50,14 +50,20 @@ while running:
     if keys[pygame.K_ESCAPE]:
         running = False
 
+
     # set direction to a new vector2, it should be equal to (0,0)
+
+    # It's not much but I tried my best, sorry for the issue
     direction = pygame.Vector2()
 
-    if keys[pygame.K_z]:
+    if rect.colliderect(pygame.Rect(circle_position.x - 15, circle_position.y - 15,30,30)):
+        circle_movement*= -1
+
+    if keys[pygame.K_w]:
         direction.y -= 1
     if keys[pygame.K_s]:
         direction.y += 1
-    if keys[pygame.K_q]:
+    if keys[pygame.K_a]:
         direction.x -= 1
     if keys[pygame.K_d]:
         direction.x += 1
